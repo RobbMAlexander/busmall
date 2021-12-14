@@ -1,0 +1,25 @@
+Body {
+  background-color: blueviolet;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  text-align: center;
+
+}
+
+section {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  background-color: fuchsia;
+  margin: 50px auto;
+}
+
+img {
+  width: 250px;
+}
+
+div {
+  width: max-content;
+}
