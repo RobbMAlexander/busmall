@@ -14,10 +14,14 @@
 
 * Implemented check to prevent same image appearing simultaneously
 
-* WIP: Check to prevent same image from being generated in sequential trios?
+* Implemented check to prevent same image from being generated in sequential trios
 
 * WIP: Programmatic solutions for N-concurrent imgs
+
+* Implemented stacked bar graphs of viewed/selected data
 
 ### Update history
 
 * 12-13-2021: Initial Build to assingment reqs
+
+* 12-14-2021: Added repetition check; added bar charts; refactored dupe check
