@@ -1,16 +1,20 @@
 Body {
-  background-color: blueviolet;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(167, 118, 212);
 }
 
 h1 {
+  margin: auto;
   text-align: center;
-
+  background-color: rgb(109, 92, 109);
+  font-family: monospace;
+  font-size: 55px;
+  width: max-content;
+  padding: 20px 30px;
 }
 
 section {
   display: flex;
-  width: 80%;
+  width: 70%;
   justify-content: space-evenly;
   background-color: rgb(224, 232, 240);
   margin: 50px auto;
@@ -18,13 +22,5 @@ section {
 
 img {
   width: 250px;
+  height: 250px;
 }
-
-div {
-  width: max-content;
-}
-
-/* test {
-  color: rgb(36, 185, 36);
-  color: rgb(110, 108, 108);
-} */

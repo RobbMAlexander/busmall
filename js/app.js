@@ -2,56 +2,56 @@
 
 let maxSelectedCountTotal = 24;
 let selectedCountTotal = 0;
-const productList = [];
+let productList = [];
 // let shownGroupSize = 3;
 
 let shownContainer = document.getElementById('display-frame');
-
-// for (let i = 0; i < shownGroupSize; i++) {
-
-//   // let shownProduct ??? = document.getElementById(`product-${i+1}`)
-// }
 
 let shownProductOne = document.getElementById('shown-product-one');
 let shownProductTwo = document.getElementById('shown-product-two');
 let shownProductThree = document.getElementById('shown-product-three');
 let selectedData = document.getElementById('display-frame');
 
-
-// function freshProductIndex() {
-//   let checkedIndex = genProductIndex();
-//   while (productList[checkedIndex].lastSelectedCount === selectedCountTotal - 1)
-//     genProductIndex();
-// }
-
 function Product(name, imgFormat = 'jpg') {
   this.name = name;
   this.src = `img/${name}.${imgFormat}`;
   this.shownCount = 0;
   this.selectedCount = 0;
-  this.lastSelectedCount = -2;
+  this.lastSelectedCount = 'new';
   productList.push(this);
-  // this.selectedDiff = ((this.shownCount) - (this.selectedCount));
-  // this.productIndexId = productList.length;
 }
-new Product('bag');
-new Product('banana');
-new Product('bathroom');
-new Product('boots');
-new Product('breakfast');
-new Product('bubblegum');
-// new Product('chair');
-// new Product('cthulhu');
-// new Product('dog-duck');
-// new Product('dragon');
-// new Product('pen');
-// new Product('pet-sweep');
-// new Product('scissors');
-// new Product('shark');
-// new Product('sweep', 'png');
-// new Product('tauntaun');
-// new Product('unicorn');
-// new Product('water-can');
+
+let loadProductData = localStorage.getItem('BusMall data');
+
+if (loadProductData) {
+  let runningProductTotals = JSON.parse(loadProductData);
+  productList = runningProductTotals;
+  for (let i= 0; i < productList.length; i++) {
+    productList[i].lastSelectedCount = 'new';
+  }
+} else {
+
+  new Product('bag');
+  new Product('banana');
+  new Product('bathroom');
+  new Product('boots');
+  new Product('breakfast');
+  new Product('bubblegum');
+  new Product('chair');
+  new Product('cthulhu');
+  new Product('dog-duck');
+  new Product('dragon');
+  new Product('pen');
+  new Product('pet-sweep');
+  new Product('scissors');
+  new Product('shark');
+  new Product('sweep', 'png');
+  new Product('tauntaun');
+  new Product('unicorn');
+  new Product('water-can');
+}
+
+
 
 // for (let i = 0; i < productList.length; i++) {
 //   productList[i].idNumber = i;
@@ -161,6 +161,9 @@ function handleDisplayData(event) { //eslint-disable-line
 
   if (selectedCountTotal === maxSelectedCountTotal) {
     renderGraph();
+
+    let savedProductData = JSON.stringify(productList);
+    localStorage.setItem('BusMall data', savedProductData);
   }
 
   // outdated list data -- replaced with chart
