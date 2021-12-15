@@ -12,7 +12,7 @@ section {
   display: flex;
   width: 80%;
   justify-content: space-evenly;
-  background-color: fuchsia;
+  background-color: rgb(224, 232, 240);
   margin: 50px auto;
 }
 
@@ -23,3 +23,8 @@ img {
 div {
   width: max-content;
 }
+
+/* test {
+  color: rgb(36, 185, 36);
+  color: rgb(110, 108, 108);
+} */
